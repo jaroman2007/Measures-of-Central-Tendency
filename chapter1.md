@@ -30,7 +30,7 @@ Look for the one that has mode in the name.
 
 msg_bad <- "That is not correct. Try Again."
 msg_success <- "Exactly! We use the package Modest. For more information check out the R Documentation [https://cran.r-project.org/web/packages/modest/modest.pdf]."
-test_mc(correct = 2, feedback_msgs = c(msg_success, msg_bad, msg_bad))
+test_mc(correct = 1, feedback_msgs = c(msg_success, msg_bad, msg_bad))
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:ac394022a0
