@@ -1,33 +1,27 @@
 ---
-title       : Insert the chapter title here
-description : Insert the chapter description here
+title       : Measures of Central Tendency
+description : Compute the 3 measures of central tendency on a meterological dataset
 attachments :
-  slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
+  slides_link : 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:26554da45a
-## A really bad movie
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:e0883902aa
+## R packages for Mode
 
-Have a look at the plot that showed up in the viewer to the right. Which type of movie has the worst rating assigned to it?
+The final measure of central tendency is the mode which reprsents the most frequent value. What package should we use to compute the mode?
 
 *** =instructions
-- Adventure
-- Action
-- Animation
-- Comedy
+- Modest
+- Stats
+- Psych
 
 *** =hint
-Have a look at the plot. Which color does the point with the lowest rating have?
+Look for the one that has mode in the name. 
 
 *** =pre_exercise_code
 ```{r}
 # The pre exercise code runs code to initialize the user's workspace.
 # You can use it to load packages, initialize datasets and draw a plot in the viewer
 
-movies <- read.csv("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/movies.csv")
-
-library(ggplot2)
-
-ggplot(movies, aes(x = runtime, y = rating, col = genre)) + geom_point()
 ```
 
 *** =sct
@@ -36,10 +30,10 @@ ggplot(movies, aes(x = runtime, y = rating, col = genre)) + geom_point()
 
 msg_bad <- "That is not correct!"
 msg_success <- "Exactly! There seems to be a very bad action movie in the dataset."
-test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
+test_mc(correct = 1, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 key:5f9adac966
+--- type:NormalExercise lang:r xp:100 skills:1 key:ac394022a0
 ## More movies
 
 In the previous exercise, you saw a dataset about movies. In this exercise, we'll have a look at yet another dataset about movies!
