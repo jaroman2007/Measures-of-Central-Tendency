@@ -49,8 +49,6 @@ test_function("names", args = "object",
 
 test_object("mydata")
 
-test_error()
-
 success_msg("Good work!")
 ```
 
