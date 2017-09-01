@@ -47,8 +47,6 @@ test_function("names", args = "object",
               not_called_msg = "You didn't call `names()`!",
               incorrect_msg = "You didn't call `names(object = ...)` with the correct argument, `object`.")
 
-test_object("mydata")
-
 success_msg("Good work!")
 ```
 
