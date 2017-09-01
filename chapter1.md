@@ -45,7 +45,7 @@ names(mydata)
 
 test_function("names", args = "x",
               not_called_msg = "You didn't call `names()`!",
-              incorrect_msg = "You didn't call `names(object = ...)` with the correct argument, `object`.")
+              incorrect_msg = "You didn't call `names(object = ...)` with the correct argument, `mydata`.")
 
 success_msg("Good work!")
 ```
