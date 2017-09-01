@@ -50,6 +50,44 @@ test_function("names", args = "x",
 success_msg("Good work!")
 ```
 
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:68f32aad96
+## Convert Date
+For this analysis, we are going to look at the December monthly temperatures instead of the November monthly temperatures. However, before we can begin we must extract out only the december temperatures. Let's get started. 
+
+*** =instructions
+We first need to convert the date string to a real date. Using the variable 'DATE' from the dataframe 'mydata', set mydata$DATE to a real date instead of a string.
+*** =hint
+You need to use the function as.Date() and paste together the mydata$DATE string appropriately, that is Year, Month, Day. 
+*** =pre_exercise_code
+```{r}
+# load in monthly NYC temperatures 
+mydata <- read.csv("https://www.e-education.psu.edu/meteo815/sites/www.e-education.psu.edu.meteo815/files/Rfiles/monthly_NYC_temperatures.csv")
+```
+
+*** =sample_code
+```{r}
+# mydata is available in your workspace
+
+# Convert string date to real date
+mydata$DATE <- 
+```
+
+*** =solution
+```{r}
+mydata$DATE <- as.Date(paste0(substr(mydata$DATE,1,4),"-",
+                     substr(mydata$DATE,5,6),"-",
+                     substr(mydata$DATE,7,8)))
+```
+
+*** =sct
+```{r}
+test_function("as.Date", args = "x",
+              not_called_msg = "You didn't call `as.Date`!",
+              incorrect_msg = "You didn't call `as.Date` with the correct arguments, pasting the date string together")
+
+success_msg("Good work!")
+```
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:e0883902aa
 ## R packages for Mode
 
