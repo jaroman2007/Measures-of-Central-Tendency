@@ -251,7 +251,7 @@ Now compute the final measure of central tendency, the mode. What function from 
 *** =instructions
 - mode
 - mfv
-- mtw
+- modeData
 *** =hint
 Check out the documentation page for more information. [https://cran.r-project.org/web/packages/modest/modest.pdf]
 *** =pre_exercise_code
@@ -264,5 +264,5 @@ Check out the documentation page for more information. [https://cran.r-project.o
 msg_bad <- "That is not correct. Try Again."
 msg_success <- "Exactly! We use the mfv. Specifically we would write:
 decTemp_median <- mfv(dec_temp)."
-test_mc(correct = 1, feedback_msgs = c(msg_bad,msg_success,msg_bad))
+test_mc(correct = 2, feedback_msgs = c(msg_bad,msg_success,msg_bad))
 ```
