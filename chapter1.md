@@ -167,7 +167,7 @@ decTemp_mean <- mean(dec_temp,na.rm=TRUE)
 
 *** =sct
 ```{r}
-test_object("dec_tempMean",
+test_object("decTemp_mean",
                      incorrect_msg = "Make sure you are use the function mean() and account for missing values")
 success_msg("Better than Average job!")
 ```
