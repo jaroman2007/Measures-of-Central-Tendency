@@ -43,7 +43,7 @@ names(mydata)
 ```{r}
 # SCT written with testwhat: https://github.com/datacamp/testwhat/wiki
 
-test_function("names", args = "dataframe",
+test_function("names", args = "object",
               not_called_msg = "You didn't call `names()`!",
               incorrect_msg = "You didn't call `names(mydata)` with the correct argument, `mydata`.")
 
