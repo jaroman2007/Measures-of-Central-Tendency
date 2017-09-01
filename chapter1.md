@@ -4,6 +4,12 @@ description : Compute the 3 measures of central tendency on a meterological data
 attachments :
   slides_link : 
 
+
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:9887466a86
+## Welcome Message
+Welecome to the Meteo 815 example on Measures of Central Tendency! In this example, we will continue off of the example online and apply the 3 measures of central tendency to temperature data from New York City. 
+
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:e0883902aa
 ## R packages for Mode
 
@@ -34,9 +40,10 @@ test_mc(correct = 1, feedback_msgs = c(msg_success, msg_bad, msg_bad))
 ```
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:ac394022a0
-## More movies
+## Names of Variables
 
-In the previous exercise, you saw a dataset about movies. In this exercise, we'll have a look at yet another dataset about movies!
+Welecome to the Meteo 815 example on Measures of Central Tendency! In this example, we will continue off of the example online and apply the 3 measures of central tendency to temperature data from New York City. 
+
 
 A dataset with a selection of movies, `movie_selection`, is available in the workspace.
 
