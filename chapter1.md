@@ -46,7 +46,7 @@ names(mydata)
 test_function("names", args = "mydata",
               not_called_msg = "You didn't call `names()`!",
               incorrect_msg = "You didn't call `names(mydata)` with the correct argument, `mydata`.")
-test_error()
+
 success_msg("Good work!")
 ```
 
