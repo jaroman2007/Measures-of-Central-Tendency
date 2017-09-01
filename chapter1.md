@@ -88,6 +88,89 @@ test_function("as.Date", args = "x",
 
 success_msg("Good work!")
 ```
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:a2fd15067b
+## December Temperatures
+We only want to examine the December temperatures since we already looked at the November ones. 
+
+*** =instructions
+Now, extract out only the december mean monthly temperatures (mydata$MNTM) from 1980-2009 in degrees C. You will need to divide by 10 to obtain the correct units. Set the temperatures to the variable 'dec_temp'.  
+*** =hint
+Make sure you extract out for only months equal to 12 and years less than 2010. 
+*** =pre_exercise_code
+```{r}
+# load in monthly NYC temperatures 
+mydata <- read.csv("https://www.e-education.psu.edu/meteo815/sites/www.e-education.psu.edu.meteo815/files/Rfiles/monthly_NYC_temperatures.csv")
+
+# change Date from string to real date
+mydata$DATE <- as.Date(paste0(substr(mydata$DATE,1,4),"-",
+                     substr(mydata$DATE,5,6),"-",
+                     substr(mydata$DATE,7,8)))
+
+```
+
+*** =sample_code
+```{r}
+# mydata is available in your workspace
+
+# Extract out December temperatures from 1980-2009
+dec_temp <- 
+
+```
+
+*** =solution
+```{r}
+dec_temp<-mydata$MNTM[which(format(mydata$DATE,"%m")==12 & format(mydata$DATE,"%Y")<2010)]/10
+```
+
+*** =sct
+```{r}
+test_object("dec_temp",
+                     incorrect_msg = "Make sure you are subsetting for the months of December from 1980-2010")
+success_msg("Great job!")
+```
+
+--- type:NormalExercise lang:r xp:100 skills:1 key:a71330a87e
+## Compute Mean
+Fantastic! Now we are all set up to compute the 3 measures of centeral tendency. First up is the mean. As a reminder, the mean represents the average value.
+
+*** =instructions
+Compute the 30-year mean (1980-2009) of the December temperatures and set it to the variable decTemp_mean.
+*** =hint
+Try using the function mean() and make sure you account for missing values. 
+*** =pre_exercise_code
+```{r}
+# load in monthly NYC temperatures 
+mydata <- read.csv("https://www.e-education.psu.edu/meteo815/sites/www.e-education.psu.edu.meteo815/files/Rfiles/monthly_NYC_temperatures.csv")
+
+# change Date from string to real date
+mydata$DATE <- as.Date(paste0(substr(mydata$DATE,1,4),"-",
+                     substr(mydata$DATE,5,6),"-",
+                     substr(mydata$DATE,7,8)))
+
+# Extract out December temperatures from 1980-2009
+dec_temp <- mydata$MNTM[which(format(mydata$DATE,"%m")==12 & format(mydata$DATE,"%Y")<2010)]/10
+```
+
+*** =sample_code
+```{r}
+# dec_temp is avaialble in your workspace
+
+# Compute the 30-year Mean
+decTemp_mean <- 
+```
+
+*** =solution
+```{r}
+decTemp_mean <- mean(dec_temp,na.rm=TRUE)
+```
+
+*** =sct
+```{r}
+test_object("dec_tempMean",
+                     incorrect_msg = "Make sure you are use the function mean() and account for missing values")
+success_msg("Better than Average job!")
+```
 --- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:e0883902aa
 ## R packages for Mode
 
