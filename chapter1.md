@@ -243,51 +243,26 @@ test_mc(correct = 1, feedback_msgs = c(msg_success, msg_bad, msg_bad))
 ```
 
 
---- type:NormalExercise lang:r xp:100 skills:1 key:ec113e5bc2
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:1bc151f0bd
 ## Compute Mode
-Now compute the final measure of central tendency, the mode.
+Now compute the final measure of central tendency, the mode. What function from the package modest would you use to compute mode?
 
 *** =instructions
-Compute the mode for the december temperatures and set the value to decTemp_mode.
+- mode
+- mfv
+- mtw
 *** =hint
-Try using the function mfv from the package modest. 
+Check out the documentation page for more information. [https://cran.r-project.org/web/packages/modest/modest.pdf]
 *** =pre_exercise_code
 ```{r}
-# load in monthly NYC temperatures 
-mydata <- read.csv("https://www.e-education.psu.edu/meteo815/sites/www.e-education.psu.edu.meteo815/files/Rfiles/monthly_NYC_temperatures.csv")
 
-# change Date from string to real date
-mydata$DATE <- as.Date(paste0(substr(mydata$DATE,1,4),"-",
-                     substr(mydata$DATE,5,6),"-",
-                     substr(mydata$DATE,7,8)))
-
-# Extract out December temperatures from 1980-2009
-dec_temp <- mydata$MNTM[which(format(mydata$DATE,"%m")==12 & format(mydata$DATE,"%Y")<2010)]/10
-
-# install modest package for mode
-if (!require("modest")) {
-  install.packages("modest") }
-
-# load in modest package
-suppressWarnings(library(modest))
-```
-
-*** =sample_code
-```{r}
-# dec_temp is avaialble in your workspace and the package 'modest' is attached
-
-# Compute the 30-year Mode
-decTemp_mode <- 
-```
-
-*** =solution
-```{r}
-decTemp_mode <- mfv(dec_temp)  
 ```
 
 *** =sct
 ```{r}
-test_object("decTemp_mode",
-                     incorrect_msg = "Make sure you are use the function mfv() from the package modest")
-success_msg("Fantastic Job! You now know the 3 measures of central tendency!")
+msg_bad <- "That is not correct. Try Again."
+msg_success <- "Exactly! We use the mfv. Specifically we would write:
+decTemp_median <- mfv(dec_temp)."
+test_mc(correct = 1, feedback_msgs = c(msg_bad,msg_success,msg_bad))
 ```
